@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ass1", "Ass1\Ass1.csproj", "{C2BD08B3-D2C1-4C12-91E0-8F9C420DB7D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{1DC52887-71D2-4A42-BC7E-04744F4E208E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{0159AE68-612A-45B9-93B0-A27BCFBD39C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Server\Entities\Entities.csproj", "{B2230B52-A66B-4ECF-9515-87AD809BF179}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryContracts", "Server\RepositoryContracts\RepositoryContracts.csproj", "{919D7298-0AD5-4B41-A28F-F6F2539A8542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Server\Entities\Entities.csproj", "{898DFB30-08B0-4638-B825-F54896A7385E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryRepositories", "Server\InMemoryRepositories\InMemoryRepositories.csproj", "{82C14B1E-8C81-44BD-96BE-80E9C29262C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,20 +14,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2BD08B3-D2C1-4C12-91E0-8F9C420DB7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2BD08B3-D2C1-4C12-91E0-8F9C420DB7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2BD08B3-D2C1-4C12-91E0-8F9C420DB7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2BD08B3-D2C1-4C12-91E0-8F9C420DB7D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DC52887-71D2-4A42-BC7E-04744F4E208E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DC52887-71D2-4A42-BC7E-04744F4E208E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DC52887-71D2-4A42-BC7E-04744F4E208E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DC52887-71D2-4A42-BC7E-04744F4E208E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2230B52-A66B-4ECF-9515-87AD809BF179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2230B52-A66B-4ECF-9515-87AD809BF179}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2230B52-A66B-4ECF-9515-87AD809BF179}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2230B52-A66B-4ECF-9515-87AD809BF179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919D7298-0AD5-4B41-A28F-F6F2539A8542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919D7298-0AD5-4B41-A28F-F6F2539A8542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919D7298-0AD5-4B41-A28F-F6F2539A8542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919D7298-0AD5-4B41-A28F-F6F2539A8542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898DFB30-08B0-4638-B825-F54896A7385E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898DFB30-08B0-4638-B825-F54896A7385E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898DFB30-08B0-4638-B825-F54896A7385E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898DFB30-08B0-4638-B825-F54896A7385E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C14B1E-8C81-44BD-96BE-80E9C29262C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C14B1E-8C81-44BD-96BE-80E9C29262C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C14B1E-8C81-44BD-96BE-80E9C29262C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C14B1E-8C81-44BD-96BE-80E9C29262C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B2230B52-A66B-4ECF-9515-87AD809BF179} = {0159AE68-612A-45B9-93B0-A27BCFBD39C1}
+		{919D7298-0AD5-4B41-A28F-F6F2539A8542} = {0159AE68-612A-45B9-93B0-A27BCFBD39C1}
+		{898DFB30-08B0-4638-B825-F54896A7385E} = {0159AE68-612A-45B9-93B0-A27BCFBD39C1}
+		{82C14B1E-8C81-44BD-96BE-80E9C29262C6} = {0159AE68-612A-45B9-93B0-A27BCFBD39C1}
 	EndGlobalSection
 EndGlobal
