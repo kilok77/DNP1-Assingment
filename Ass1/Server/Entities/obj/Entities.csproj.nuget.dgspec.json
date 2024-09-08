@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Ass1/Ass1.csproj": {}
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {}
   },
   "projects": {
-    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Ass1/Ass1.csproj": {
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Ass1/Ass1.csproj",
-        "projectName": "Ass1",
-        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Ass1/Ass1.csproj",
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj",
         "packagesPath": "/Users/jankalina/.nuget/packages/",
-        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Ass1/obj/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jankalina/.nuget/NuGet/NuGet.Config"
