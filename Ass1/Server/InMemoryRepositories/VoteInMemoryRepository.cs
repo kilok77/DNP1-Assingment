@@ -1,50 +1,24 @@
 using Entities;
 using RepositoryContracts;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace InMemoryRepositories;
 
 public class VoteInMemoryRepository : IVoteRepository
 {
-    private readonly List<Vote> votes;
+    private readonly List<Vote> votes = new List<Vote>();
 
-    public VoteInMemoryRepository()
+    public Task AddAsync(Vote vote)
     {
-        votes = new List<Vote>();
-        InitialDummyData();
-    }
-    
-    private void InitialDummyData()
-    {
-        var commentId = new Guid("55555555-5555-5555-5555-555555555555"); // Use an existing comment ID
-
-        votes.Add(new Vote
-        {
-            VoteId = new Guid("77777777-7777-7777-7777-777777777777"),
-            CommentId = commentId,
-            IsUpVote = 1,
-            CreatedAt = DateTime.UtcNow
-        });
-
-        votes.Add(new Vote
-        {
-            VoteId = new Guid("88888888-8888-8888-8888-888888888888"),
-            CommentId = commentId,
-            IsUpVote = 0,
-            CreatedAt = DateTime.UtcNow
-        });
-    }
-
-
-    public Task<Vote> AddAsync(Vote vote)
-    {
-        vote.VoteId = Guid.NewGuid();
         votes.Add(vote);
-        return Task.FromResult(vote);
+        return Task.CompletedTask;
     }
 
     public Task UpdateAsync(Vote vote)
     {
-        var existingVote = votes.SingleOrDefault(x => x.VoteId == vote.VoteId);
+        var existingVote = votes.SingleOrDefault(v => v.VoteId == vote.VoteId);
         if (existingVote == null)
         {
             throw new InvalidOperationException($"Vote with ID '{vote.VoteId}' was not found");
@@ -58,19 +32,19 @@ public class VoteInMemoryRepository : IVoteRepository
 
     public Task DeleteAsync(Guid voteId)
     {
-        var voteToRemove = votes.SingleOrDefault(x => x.VoteId == voteId);
-        if (voteToRemove == null)
+        var vote = votes.SingleOrDefault(v => v.VoteId == voteId);
+        if (vote == null)
         {
             throw new InvalidOperationException($"Vote with ID '{voteId}' was not found");
         }
 
-        votes.Remove(voteToRemove);
+        votes.Remove(vote);
         return Task.CompletedTask;
     }
 
     public Task<Vote> GetSingleAsync(Guid voteId)
     {
-        var vote = votes.SingleOrDefault(x => x.VoteId == voteId);
+        var vote = votes.SingleOrDefault(v => v.VoteId == voteId);
         if (vote == null)
         {
             throw new InvalidOperationException($"Vote with ID '{voteId}' was not found");
@@ -82,5 +56,15 @@ public class VoteInMemoryRepository : IVoteRepository
     public IQueryable<Vote> GetMany()
     {
         return votes.AsQueryable();
+    }
+
+    public IQueryable<Vote> GetVotesForPostAsync(Guid postId)
+    {
+        return votes.Where(v => v.EntityType == VoteType.Post && v.EntityId == postId).AsQueryable();
+    }
+
+    public IQueryable<Vote> GetVotesForCommentAsync(Guid commentId)
+    {
+        return votes.Where(v => v.EntityType == VoteType.Comment && v.EntityId == commentId).AsQueryable();
     }
 }

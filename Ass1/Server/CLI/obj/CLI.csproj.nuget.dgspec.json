@@ -1,0 +1,261 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/CLI/CLI.csproj": {}
+  },
+  "projects": {
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/CLI/CLI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/CLI/CLI.csproj",
+        "projectName": "CLI",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/CLI/CLI.csproj",
+        "packagesPath": "/Users/jankalina/.nuget/packages/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/CLI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jankalina/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj"
+              },
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj"
+              },
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/jankalina/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj",
+        "packagesPath": "/Users/jankalina/.nuget/packages/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jankalina/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/jankalina/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj",
+        "projectName": "InMemoryRepositories",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj",
+        "packagesPath": "/Users/jankalina/.nuget/packages/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jankalina/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj"
+              },
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/jankalina/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj",
+        "projectName": "RepositoryContracts",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj",
+        "packagesPath": "/Users/jankalina/.nuget/packages/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jankalina/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/jankalina/.dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

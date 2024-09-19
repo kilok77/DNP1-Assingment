@@ -6,11 +6,14 @@ namespace InMemoryRepositories;
 public class UserInMemoryRepository : IUserRepository
 {
     private readonly List<User> users;
+    
+    private readonly Guid currentUserId;
 
     public UserInMemoryRepository()
     {
         users = new List<User>();
         InitialDummyData();
+        currentUserId = new Guid("11111111-1111-1111-1111-111111111111");
     }
     
     private void InitialDummyData()
@@ -30,6 +33,7 @@ public class UserInMemoryRepository : IUserRepository
         });
     }
 
+    public Guid GetCurrentUserId() => currentUserId;
 
     public Task<User> AddAsync(User user)
     {

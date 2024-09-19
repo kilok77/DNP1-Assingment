@@ -9,5 +9,7 @@ namespace RepositoryContracts
         Task DeleteAsync(Guid userId);
         Task<User> GetSingleAsync(Guid id);
         IQueryable<User> GetMany();
+        
+        Guid GetCurrentUserId();
     }
 }

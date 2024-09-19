@@ -1,0 +1,16 @@
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/bin/Debug/net8.0/RepositoryContracts.deps.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/bin/Debug/net8.0/RepositoryContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/bin/Debug/net8.0/RepositoryContracts.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/bin/Debug/net8.0/Entities.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/bin/Debug/net8.0/Entities.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.csproj.AssemblyReference.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.AssemblyInfoInputs.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.AssemblyInfo.cs
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.csproj.CoreCompileInputs.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.sourcelink.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/Reposito.28D4BA81.Up2Date
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/refint/RepositoryContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/RepositoryContracts.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/obj/Debug/net8.0/ref/RepositoryContracts.dll
