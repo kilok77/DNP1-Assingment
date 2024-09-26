@@ -10,10 +10,10 @@ public class VoteInMemoryRepository : IVoteRepository
 {
     private readonly List<Vote> votes = new List<Vote>();
 
-    public Task AddAsync(Vote vote)
+    public Task<Vote> AddAsync(Vote vote)
     {
         votes.Add(vote);
-        return Task.CompletedTask;
+        return Task.FromResult(vote);
     }
 
     public Task UpdateAsync(Vote vote)

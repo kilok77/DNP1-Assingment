@@ -29,8 +29,8 @@
               "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
                 "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj"
               },
-              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj": {
-                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj"
+              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/FileRepositories.csproj": {
+                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/FileRepositories.csproj"
               },
               "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj": {
                 "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj"
@@ -130,14 +130,14 @@
         }
       }
     },
-    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj": {
+    "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/FileRepositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj",
-        "projectName": "InMemoryRepositories",
-        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/InMemoryRepositories.csproj",
+        "projectUniqueName": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/FileRepositories.csproj",
+        "projectName": "FileRepositories",
+        "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/FileRepositories.csproj",
         "packagesPath": "/Users/jankalina/.nuget/packages/",
-        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/InMemoryRepositories/obj/",
+        "outputPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/FileRepositories/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jankalina/.nuget/NuGet/NuGet.Config"
@@ -152,9 +152,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj": {
-                "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/Entities/Entities.csproj"
-              },
               "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj": {
                 "projectPath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/RepositoryContracts/RepositoryContracts.csproj"
               }

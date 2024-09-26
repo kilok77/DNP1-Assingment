@@ -68,7 +68,7 @@ public class UserInMemoryRepository : IUserRepository
         return Task.CompletedTask;
     }
 
-    public Task<User> GetSingleAsync(Guid userId)
+    public async Task<User> GetSingleAsync(Guid userId)
     {
         var user = users.SingleOrDefault(x => x.UserId == userId);
         if (user == null)
@@ -76,7 +76,7 @@ public class UserInMemoryRepository : IUserRepository
             throw new InvalidOperationException($"User with ID '{userId}' was not found");
         }
 
-        return Task.FromResult(user);
+        return user;
     }
 
     public IQueryable<User> GetMany()
