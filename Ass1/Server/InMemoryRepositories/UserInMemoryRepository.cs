@@ -18,19 +18,8 @@ public class UserInMemoryRepository : IUserRepository
     
     private void InitialDummyData()
     {
-        users.Add(new User
-        {
-            UserId = new Guid("11111111-1111-1111-1111-111111111111"),
-            UserName = "JohnDoe",
-            Email = "john.doe@example.com"
-        });
+        
 
-        users.Add(new User
-        {
-            UserId = new Guid("44444444-4444-4444-4444-444444444444"),
-            UserName = "JaneDoe",
-            Email = "jane.doe@example.com"
-        });
     }
 
     public Guid GetCurrentUserId() => currentUserId;

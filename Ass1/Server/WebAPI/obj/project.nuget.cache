@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "OnNCfZ0Ib/s=",
+  "success": true,
+  "projectFilePath": "/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/WebAPI.csproj",
+  "expectedPackageFiles": [
+    "/Users/jankalina/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/jankalina/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
+    "/Users/jankalina/.nuget/packages/swashbuckle.aspnetcore/6.8.0/swashbuckle.aspnetcore.6.8.0.nupkg.sha512",
+    "/Users/jankalina/.nuget/packages/swashbuckle.aspnetcore.swagger/6.8.0/swashbuckle.aspnetcore.swagger.6.8.0.nupkg.sha512",
+    "/Users/jankalina/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.8.0/swashbuckle.aspnetcore.swaggergen.6.8.0.nupkg.sha512",
+    "/Users/jankalina/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.8.0/swashbuckle.aspnetcore.swaggerui.6.8.0.nupkg.sha512"
+  ],
+  "logs": []
+}

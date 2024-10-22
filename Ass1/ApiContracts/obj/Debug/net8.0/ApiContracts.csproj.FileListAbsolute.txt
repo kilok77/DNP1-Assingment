@@ -1,0 +1,16 @@
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/bin/Debug/net8.0/ApiContracts.deps.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/bin/Debug/net8.0/ApiContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/bin/Debug/net8.0/ApiContracts.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.AssemblyInfoInputs.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.AssemblyInfo.cs
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.csproj.CoreCompileInputs.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.sourcelink.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/refint/ApiContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ref/ApiContracts.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/bin/Debug/net8.0/Entities.dll
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/bin/Debug/net8.0/Entities.pdb
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContracts.csproj.AssemblyReference.cache
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/ApiContracts/obj/Debug/net8.0/ApiContr.0C903ABF.Up2Date
