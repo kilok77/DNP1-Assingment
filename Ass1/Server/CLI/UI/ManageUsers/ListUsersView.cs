@@ -24,7 +24,7 @@ public class ListUsersView
             Console.WriteLine("List of users:");
             foreach (var user in users)
             {
-                Console.WriteLine($"User ID: {user.UserId}, Username: {user.UserName}, Email: {user.Email}");
+                Console.WriteLine($"User ID: {user.Id}, Username: {user.Username}, Email: {user.Email}");
             }
         }
     }

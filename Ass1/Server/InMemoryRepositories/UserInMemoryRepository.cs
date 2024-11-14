@@ -3,7 +3,7 @@ using RepositoryContracts;
 
 namespace InMemoryRepositories;
 
-public class UserInMemoryRepository : IUserRepository
+public class UserInMemoryRepository
 {
     private readonly List<User> users;
     
@@ -26,17 +26,17 @@ public class UserInMemoryRepository : IUserRepository
 
     public Task<User> AddAsync(User user)
     {
-        user.UserId = Guid.NewGuid();
+        user.Id = Guid.NewGuid();
         users.Add(user);
         return Task.FromResult(user);
     }
 
     public Task UpdateAsync(User user)
     {
-        var existingUser = users.SingleOrDefault(x => x.UserId == user.UserId);
+        var existingUser = users.SingleOrDefault(x => x.Id == user.Id);
         if (existingUser == null)
         {
-            throw new InvalidOperationException($"User with ID '{user.UserId}' was not found");
+            throw new InvalidOperationException($"User with ID '{user.Id}' was not found");
         }
 
         users.Remove(existingUser);
@@ -47,7 +47,7 @@ public class UserInMemoryRepository : IUserRepository
 
     public Task DeleteAsync(Guid userId)
     {
-        var userToRemove = users.SingleOrDefault(x => x.UserId == userId);
+        var userToRemove = users.SingleOrDefault(x => x.Id == userId);
         if (userToRemove == null)
         {
             throw new InvalidOperationException($"User with ID '{userId}' was not found");
@@ -59,7 +59,7 @@ public class UserInMemoryRepository : IUserRepository
 
     public async Task<User> GetSingleAsync(Guid userId)
     {
-        var user = users.SingleOrDefault(x => x.UserId == userId);
+        var user = users.SingleOrDefault(x => x.Id == userId);
         if (user == null)
         {
             throw new InvalidOperationException($"User with ID '{userId}' was not found");

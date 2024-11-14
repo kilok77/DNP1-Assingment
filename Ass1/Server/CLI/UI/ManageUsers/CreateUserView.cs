@@ -22,8 +22,8 @@ public class CreateUserView
 
         var user = new User
         {
-            UserId = Guid.NewGuid(),
-            UserName = username,
+            Id = Guid.NewGuid(),
+            Username = username,
             Email = email
         };
 

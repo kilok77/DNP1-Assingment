@@ -1,4 +1,5 @@
 using ApiContracts;
+using ApiContracts.CommentDto;
 using ApiContracts.PostDto;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,16 @@ namespace WebAPI.Controllers;
 public class PostsController : ControllerBase
 {
     private readonly IPostRepository postRepository;
+    private readonly ICommentRepository commentRepository;
 
-    public PostsController(IPostRepository postRepository)
+    public PostsController(IPostRepository postRepository, ICommentRepository commentRepository)
     {
         this.postRepository = postRepository;
+        this.commentRepository = commentRepository;
     }
 
     [HttpPost]
-    public async Task<ActionResult<PostDto>> CreatePostAsync([FromBody] CreatePostDto request)
+    public async Task<ActionResult<PostDto>> CreatePostAsync([FromBody] PostDto request)
     {
         Post post = new Post
         {
@@ -81,6 +84,43 @@ public class PostsController : ControllerBase
         };
         return Ok(dto);
     }
+    
+    [HttpGet("{id}/comments")]
+    public async Task<ActionResult<List<CommentDto>>> GetCommentsForPostAsync(Guid id)
+    {
+        Console.WriteLine(id);
+        if (id == Guid.Empty)
+        {
+            return BadRequest("Post ID is invalid.");
+        }
+
+        try
+        {
+            var comments = await commentRepository.GetAllAsync(id);
+
+            if (comments == null || !comments.Any())
+            {
+                return NotFound("No comments found for this post.");
+            }
+
+            var commentDtos = comments.Select(c => new CommentDto
+            {
+                Id = c.CommentId,
+                PostId = c.PostId,
+                UserId = c.UserId,
+                Content = c.Content,
+                CreatedAt = c.CreatedAt
+            }).ToList();
+
+            return Ok(commentDtos);
+        }
+        catch (Exception ex)
+        {
+            // Log the exception details
+            return StatusCode(500, "Internal server error: " + ex.Message);
+        }
+    }
+
 
     [HttpGet]
     public ActionResult<IEnumerable<PostDto>> GetAllPosts()

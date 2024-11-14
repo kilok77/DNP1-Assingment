@@ -93,4 +93,22 @@ public class CommentFileRepository : ICommentRepository
 
         return comments.AsQueryable();
     }
+    public async Task<List<Comment>> GetAllAsync(Guid postId)
+    {
+        string commentsAsJson = await File.ReadAllTextAsync(filePath);
+        if (string.IsNullOrEmpty(commentsAsJson)) 
+        {
+            return new List<Comment>(); // Return an empty list if no comments found
+        }
+
+        List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(commentsAsJson);
+        if (comments == null) 
+        {
+            return new List<Comment>(); // Handle null case, return empty list
+        }
+
+        var postComments = comments.Where(c => c.PostId == postId).ToList();
+        return postComments;
+    }
+
 }

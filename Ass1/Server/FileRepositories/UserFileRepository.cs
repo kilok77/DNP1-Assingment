@@ -32,7 +32,7 @@ public class UserFileRepository : IUserRepository
         string usersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> users = JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
 
-        int index = users.FindIndex(u => u.UserId == user.UserId);
+        int index = users.FindIndex(u => u.Id == user.Id);
         if (index != -1)
         {
             users[index] = user;
@@ -50,7 +50,7 @@ public class UserFileRepository : IUserRepository
         string usersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> users = JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
 
-        var userToDelete = users.FirstOrDefault(u => u.UserId == userId);
+        var userToDelete = users.FirstOrDefault(u => u.Id == userId);
         if (userToDelete != null)
         {
             users.Remove(userToDelete);
@@ -68,7 +68,16 @@ public class UserFileRepository : IUserRepository
         string usersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> users = JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
 
-        var user = users.FirstOrDefault(u => u.UserId == id);
+        var user = users.FirstOrDefault(u => u.Id == id);
+        return user ?? throw new KeyNotFoundException("User not found.");
+    }
+    
+    public async Task<User> GetSingleAsync(string email)
+    {
+        string usersAsJson = await File.ReadAllTextAsync(filePath);
+        List<User> users = JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
+
+        var user = users.FirstOrDefault(u => u.Email == email);
         return user ?? throw new KeyNotFoundException("User not found.");
     }
 

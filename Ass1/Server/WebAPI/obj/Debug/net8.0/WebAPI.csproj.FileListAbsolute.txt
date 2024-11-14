@@ -45,3 +45,5 @@
 /Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/obj/Debug/net8.0/WebAPI.genruntimeconfig.cache
 /Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/obj/Debug/net8.0/ref/WebAPI.dll
 /Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/bin/Debug/net8.0/users.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/bin/Debug/net8.0/comments.json
+/Users/jankalina/Documents/DNP1/DNP1-Assingment/Ass1/Server/WebAPI/bin/Debug/net8.0/posts.json

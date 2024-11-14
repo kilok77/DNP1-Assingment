@@ -3,8 +3,8 @@ namespace Entities;
 
 public class User
 {
-    public Guid UserId { get; set; }
-    public string UserName { get; set; }
+    public Guid Id { get; set; }
+    public string Username { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
 
@@ -12,11 +12,11 @@ public class User
     {
         
     }
-    public User(string userName, string email, string password)
+    public User(string username, string email, string password)
     {
-        UserName = userName;
+        Username = username;
         Email = email;
         Password = password;
-        UserId = Guid.NewGuid();
+        Id = Guid.NewGuid();
     }
 }

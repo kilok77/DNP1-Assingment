@@ -13,6 +13,8 @@ public class CommentInMemoryRepository : ICommentRepository
         InitialDummyData();
     }
     
+    
+    
     private void InitialDummyData()
     {
         var postId = new Guid("22222222-2222-2222-2222-222222222222"); // Use an existing post ID
@@ -37,6 +39,10 @@ public class CommentInMemoryRepository : ICommentRepository
         });
     }
 
+    public async Task<List<Comment>> GetAllAsync(Guid postId)
+    {
+        return null;
+    }
 
     public Task<Comment> AddAsync(Comment comment)
     {

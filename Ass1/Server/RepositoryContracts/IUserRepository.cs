@@ -7,8 +7,9 @@ namespace RepositoryContracts
         Task<User> AddAsync(User user);
         Task UpdateAsync(User user);
         Task DeleteAsync(Guid userId);
-        Task<User> GetSingleAsync(Guid id);
         IQueryable<User> GetMany();
+        Task<User> GetSingleAsync(Guid id);
+        Task<User> GetSingleAsync(string email);
         
         Guid GetCurrentUserId();
     }

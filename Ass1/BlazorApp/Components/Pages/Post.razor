@@ -1,0 +1,169 @@
+﻿@page "/posts/{postId:guid}"
+@using System.Security.Claims
+@using ApiContracts.PostDto
+@using ApiContracts.CommentDto
+@inject BlazorApp.Services.IPostService PostService
+@inject BlazorApp.Services.ICommentService CommentService
+@inject BlazorApp.Services.IUserService UserService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@attribute [Authorize]
+
+@if (post == null)
+{
+    <p>Loading post...</p>
+}
+else
+{
+    <h3>@post.Title</h3>
+    <div>
+        <h4>Post Details</h4>
+        <p>
+            <strong>Title:</strong> @post.Title
+        </p>
+        <p>
+            <strong>Content:</strong> @post.Content
+        </p>
+        <p>
+            <strong>Author (User ID):</strong> @author
+        </p>
+        <p>
+            <strong>Created At:</strong> @post.CreatedAt.ToString("f")
+        </p>
+    </div>
+
+    <h4>Comments</h4>
+
+    @if (comments == null)
+    {
+        <p>Loading comments...</p>
+    }
+    else if (!comments.Any())
+    {
+        <p>No comments yet.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var comment in comments)
+            {
+                <li>
+                    <strong>@commentsAuthors.GetValueOrDefault(comment.UserId, "Unknown"):</strong> @comment.Content
+                </li>
+            }
+        </ul>
+    }
+    
+<h4>Add a Comment</h4>
+<EditForm Model="newComment" OnValidSubmit="HandleCommentSubmit">
+    <div>
+        <label for="commentContent">Your Comment:</label>
+        <textarea id="commentContent" @bind="newComment.Content" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</EditForm>
+
+}
+
+@code {
+    [Parameter] public Guid postId { get; set; }
+
+    private PostDto post;
+    private string author;
+    private List<CommentDto> comments;
+    private Dictionary<Guid, string> commentsAuthors = new Dictionary<Guid, string>();
+
+    private CommentDto newComment = new CommentDto();
+    private string userId;
+
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        AuthenticationState authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        ClaimsPrincipal claimsPrincipal = authenticationState.User;
+
+        if (claimsPrincipal.Identity is null || !claimsPrincipal.Identity.IsAuthenticated)
+        {
+            // the user is not logged in
+            return;
+        }
+
+        IEnumerable<Claim> claims = claimsPrincipal.Claims;
+
+        userId = claims.Single(c => c.Type == "Id").Value;
+
+        try
+        {
+            // Fetch the post details
+            Console.WriteLine(postId);
+            post = await PostService.GetPostAsync(postId);
+
+            if (post == null)
+            {
+                Console.WriteLine("Post is null");
+            }
+            
+            var user = await UserService.GetUserAsync(post.UserId);
+            author = user?.Username ?? "Unknown";
+            newComment.PostId = postId;
+
+            // Fetch comments for the current post
+            comments = await CommentService.GetComments(postId);
+
+            if (comments == null)
+            {
+                Console.WriteLine("Comments are null");
+            }
+            
+            foreach (var comment in comments)
+            {
+                if (!commentsAuthors.ContainsKey(comment.UserId))
+                {
+                    Console.WriteLine(comment.UserId);
+                    var commentAuthor = await UserService.GetUserAsync(comment.UserId);
+                    Console.WriteLine(commentAuthor);
+                    commentsAuthors[comment.UserId] = commentAuthor?.Username ?? "Unknown";
+                }
+            }
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading post or comments: {ex.Message}");
+        }
+    }
+    
+    private async Task HandleCommentSubmit()
+    {
+
+        try
+        {
+            
+        newComment.UserId = Guid.Parse(userId);
+        newComment = await CommentService.AddComment(newComment);
+        Console.WriteLine("Comment submitted: " + newComment);
+
+        if (newComment != null)
+        {
+            comments.Add(newComment);
+        }
+        
+        if (!commentsAuthors.ContainsKey(newComment.UserId))
+        {
+            var user = await UserService.GetUserAsync(newComment.UserId);
+            commentsAuthors[newComment.UserId] = user?.Username ?? "Unknown";
+        }
+
+        newComment = new CommentDto{PostId = postId};
+        StateHasChanged();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error submitting comment: {ex.Message}");
+        }
+    }
+
+}

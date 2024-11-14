@@ -1,4 +1,6 @@
+using Entities;
 using FileRepositories;
+using Microsoft.AspNetCore.Identity;
 using RepositoryContracts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddScoped<IPostRepository, PostFileRepository>();
 builder.Services.AddScoped<IUserRepository, UserFileRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentFileRepository>();
 builder.Services.AddScoped<IVoteRepository, VoteFileRepository>();
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
 
 // Add logging to help diagnose issues
 builder.Logging.ClearProviders();

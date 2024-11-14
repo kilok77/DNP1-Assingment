@@ -1,0 +1,88 @@
+namespace BlazorApp.Components.Pages;
+
+@page "/users"
+@using ApiContracts.UserDto
+@inject BlazorApp.Services.IUserService UserService
+
+@attribute [Authorize]
+
+<h3>All Users</h3>
+
+@if (users == null)
+{
+    <p>Loading...</p>
+}
+else if (!users.Any())
+{
+    <p>No users available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var user in users)
+        {
+            <li>
+                <h4>@user.Username</h4>
+                <small>Email: @user.Email</small>
+            </li>
+        }
+    </ul>
+}
+
+<h4>Create a New User</h4>
+<EditForm Model="newUser" OnValidSubmit="HandleUserSubmit">
+    <div>
+        <label for="username">Username:</label>
+        <input id="username" @bind="newUser.Username" class="form-control" required/>
+
+        <label for="email">Email:</label>
+        <input id="email" @bind="newUser.Email" class="form-control" required/>
+
+        <label for="password">Password:</label>
+        <input id="password" @bind="newUser.Password" type="password" class="form-control" required/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create User</button>
+</EditForm>
+
+@code {
+    private List<UserDto> users;
+    private CreateUserDto newUser = new CreateUserDto();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            users = await UserService.GetUsersAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading users: {ex.Message}");
+        }
+    }
+
+    private async Task HandleUserSubmit()
+    {
+        try
+        {
+            var createdUser = await UserService.AddUserAsync(new CreateUserDto
+            {
+                Username = newUser.Username,
+                Email = newUser.Email,
+                Password = newUser.Password
+            });
+
+            if (createdUser != null)
+            {
+                users.Add(createdUser); // Add the new user to the list
+                newUser = new CreateUserDto(); // Clear the form after submission
+            }
+
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error submitting user: {ex.Message}");
+        }
+    }
+
+}

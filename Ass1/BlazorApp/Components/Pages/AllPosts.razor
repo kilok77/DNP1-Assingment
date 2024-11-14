@@ -1,0 +1,127 @@
+@page "/posts"
+@using System.Security.Claims
+@using ApiContracts.PostDto
+@using ApiContracts.UserDto
+@inject BlazorApp.Services.IPostService PostService
+@inject BlazorApp.Services.IUserService UserService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@attribute [Authorize]
+
+<h3>All Posts</h3>
+
+@if (posts == null)
+{
+    <p>Loading...</p>
+}
+else if (!posts.Any())
+{
+    <p>No posts available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var post in posts)
+        {
+            <li>
+                <h4>
+                    <a href="/posts/@post.Id">@post.Title</a>
+                </h4>
+                <small>Author: @authors.GetValueOrDefault(post.UserId, "Unknown")</small>
+            </li>
+        }
+    </ul>
+
+<h4>Add a Post</h4>
+<EditForm Model="newPost" OnValidSubmit="HandlePostSubmit">
+    <div>
+        <label for="postTitle">Title:</label>
+        <input id="postTitle" @bind="newPost.Title" class="form-control" required />
+
+        <label for="postContent">Content:</label>
+        <textarea id="postContent" @bind="newPost.Content" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</EditForm>
+
+}
+
+@code {
+    private List<PostDto> posts;
+    private Dictionary<Guid, string> authors = new Dictionary<Guid, string>();
+    private PostDto newPost = new PostDto();
+    private string userId;
+
+    
+    
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationState authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        ClaimsPrincipal claimsPrincipal = authenticationState.User;
+
+        if (claimsPrincipal.Identity is null || !claimsPrincipal.Identity.IsAuthenticated)
+        {
+            // the user is not logged in
+            return;
+        }
+
+        IEnumerable<Claim> claims = claimsPrincipal.Claims;
+
+        userId = claims.Single(c => c.Type == "Id").Value;
+        
+
+        try
+        {
+            posts = await PostService.GetAllPostsAsync();
+            
+            // Fetch author names for each post
+            foreach (var post in posts)
+            {
+                if (!authors.ContainsKey(post.UserId))
+                {
+                    var user = await UserService.GetUserAsync(post.UserId);
+                    authors[post.UserId] = user?.Username ?? "Unknown";
+                }
+            }
+            
+        }
+        catch (Exception ex)
+        {
+// You can handle errors here, e.g., show a message to the user
+            Console.WriteLine($"Error loading posts: {ex.Message}");
+        }
+    }
+    
+    private async Task HandlePostSubmit()
+    {
+
+        try
+        {
+            Console.WriteLine("UserID: "+userId);
+            newPost.UserId = Guid.Parse(userId);
+            newPost = await PostService.AddPostAsync(newPost);
+            // Console.WriteLine("Comment submitted: " + newComment);
+
+            if (newPost != null)
+            {
+                posts.Add(newPost);
+            }
+        
+            if (!authors.ContainsKey(newPost.UserId))
+            {
+                var user = await UserService.GetUserAsync(newPost.UserId);
+                authors[newPost.UserId] = user?.Username ?? "Unknown";
+            }
+
+            newPost = new PostDto();
+            StateHasChanged();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error submitting comment: {ex.Message}");
+        }
+    }
+
+
+}
